@@ -7,11 +7,12 @@ onmessage = function messageHandler(event) {
                                     event.data.size
                                 ),
             processedData = dataProcessor.process();
-        //    var blob = new Blob(byteArrays, {type: contentType});
+
+        let blob = new Blob([processedData.join('\r\n')], {type: 'text/csv'});
 
         postMessage({
           id: '',
-          data: processedData
+          file: blob
         });
 
         close();

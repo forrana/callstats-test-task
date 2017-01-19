@@ -14,11 +14,24 @@ module.exports =
           filename: '[name].bundle.js',
           publicPath: ASSETS,
         },
+        module: {
+            rules: [
+                {
+                    test: /\.css$/,
+                    use: ['style-loader', 'css-loader'],
+                },
+                {
+                    test: /\.worker\.js$/,
+                    loader: "worker-loader?inline=true"
+                }
+
+            ]
+        },
         devServer: {
           contentBase: path.resolve(__dirname, './src/client'),
         },
         resolve: {
           modules: [path.resolve(__dirname, './src/client'), 'node_modules'],
-          extensions: ['.js', '.json']
+          extensions: ['.js']
         }
     }
