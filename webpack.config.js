@@ -31,7 +31,11 @@ module.exports =
           contentBase: path.resolve(__dirname, './src/client'),
         },
         resolve: {
-          modules: [path.resolve(__dirname, './src/client'), 'node_modules'],
+          modules: [
+              path.resolve(__dirname, './src/client'),
+              path.resolve(__dirname, './src/client/modules'),
+                            'node_modules'
+                        ],
           extensions: ['.js']
         }
     }
