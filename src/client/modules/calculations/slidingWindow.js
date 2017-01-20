@@ -29,8 +29,12 @@ function* iterator(frameSize, bufferSize) {
 
 function* frame(buffer, iterator) {
     let coords,
-        array = buffer.slice(0);
+        array = buffer.slice(0),
+        size = array.length;
 
     while(coords = iterator.next().value)
-        yield array.slice(coords.start, coords.end);
+        yield {
+            chunk: array.slice(coords.start, coords.end),
+            complete: (coords.start * 100 / size)
+        }
 }

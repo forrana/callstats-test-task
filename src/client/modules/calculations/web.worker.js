@@ -6,7 +6,19 @@ onmessage = function messageHandler(event) {
                                     event.data.array,
                                     event.data.size
                                 ),
+            processedData = 0,
+            progress = 2.5;
+
+        while(!Array.isArray(processedData)) {
             processedData = dataProcessor.process();
+            if (progress < processedData){
+                progress += 2.5;
+                postMessage({
+                  id: '',
+                  progress: progress + 10
+                });
+            }
+        }
 
         let blob = new Blob([processedData.join('\r\n')], {type: 'text/csv'});
 

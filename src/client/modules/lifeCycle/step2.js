@@ -19,22 +19,30 @@ export default class Step2 extends Step {
            }, 100);
         }
 
+        let finish = (file, resolve) => {
+            let elapsedTime = Date.now() - startTime;
+
+            console.info('end processing', new Date().getTime());
+            clearInterval(interval);
+            timer.innerHTML = (elapsedTime / 1000).toFixed(3);
+            resolve(event.data.file);
+        }
+
         let startWorker = (data, resolve) => {
             let worker = new Worker;
 
             worker.postMessage({
-                                    size: 1000,
+                                    size: 10000,
                                     array: data
                                 });
             console.info('start processing', new Date().getTime());
 
             worker.onmessage = function(event) {
-                let elapsedTime = Date.now() - startTime;
-
-                console.info('end processing', new Date().getTime());
-                clearInterval(interval);
-                timer.innerHTML = (elapsedTime / 1000).toFixed(3);
-                resolve(event.data.file);
+                if(event.data.file) {
+                    finish(event.data.file, resolve);
+                } else {
+                    console.info(event.data.progress);
+                }
             }
         }
 
