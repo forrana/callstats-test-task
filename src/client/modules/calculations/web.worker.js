@@ -7,15 +7,15 @@ onmessage = function messageHandler(event) {
                                     event.data.size
                                 ),
             processedData = 0,
-            progress = 2.5;
+            progress = 5;
 
         while(!Array.isArray(processedData)) {
             processedData = dataProcessor.process();
             if (progress < processedData){
-                progress += 2.5;
+                progress += 5;
                 postMessage({
                   id: '',
-                  progress: progress + 10
+                  progress: progress + 95
                 });
             }
         }

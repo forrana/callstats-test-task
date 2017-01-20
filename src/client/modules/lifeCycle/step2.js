@@ -9,7 +9,6 @@ export default class Step2 extends Step {
             interval,
             startTime;
 
-            console.log(data);
         let startTimer = () => {
             timer =  document.querySelector("#timer");
             startTime = Date.now();
@@ -63,7 +62,6 @@ export default class Step2 extends Step {
                 startWorker(inputArray, resolve);
                 startTimer();
             };
-            console.log(data);
             fr.readAsText(data);
         }
 

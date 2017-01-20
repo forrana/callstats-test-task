@@ -12,56 +12,23 @@ export default class StateMachine{
             Step3
         ];
 
-        this.instantiate =
-            async function (constructor, params) {
-                console.log(params);
+        this.instantiate = async function (constructor, params) {
+                                   let instance = new constructor(params),
+                                       result = await instance.fire();
 
-               let instance = new constructor(params),
-                   result = await instance.fire();
-
-               return result;
-            }
+                                   return result;
+                                }
     }
 
     async start() {
-        let prevResult = null;//await this.instantiate(this.steps.shift());
+        let prevResult = null;
         let currentResult = null;
 
         while(this.steps.length > 0) {
             currentResult = await this.instantiate(this.steps.shift(), prevResult);
             prevResult = currentResult;
-            console.log(currentResult);
         }
-        // let currentStep = this.instantiate(this.steps.shift()),
-        //
-        // debugger;
-        //
-        // while(this.steps.length > 0) {
-        //     currentStep.fire().then(
-        //         result => {
-        //             currentStep = this.instantiate(this.steps.shift(), result);
-        //         }
-        //     )
-        // }
 
-        // step0.fire().then(
-        //     result => {
-        //         let step1 = new Step1(result);
-        //
-        //         step1.fire().then(
-        //             result => {
-        //                 let step2 = new Step2(result);
-        //
-        //                 step2.fire().then(
-        //                     result => {
-        //                         let step3 = new Step3(result);
-        //
-        //                         step3.fire();
-        //                     }
-        //                 )
-        //             }
-        //         )
-        //     }
-        // )
+        return currentResult;
     }
 }

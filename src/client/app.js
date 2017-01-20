@@ -1,6 +1,16 @@
 import StateMachine from 'stateMachine';
 import styles from './styles/app.css';
 
-let stateMachine = new StateMachine();
 
-stateMachine.start();
+
+(async function(){
+    let result;
+
+    do {
+        let stateMachine = new StateMachine();
+        
+        result = await stateMachine.start();
+        console.log(result);
+    }
+    while(result);
+})()
