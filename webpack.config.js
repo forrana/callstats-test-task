@@ -7,7 +7,7 @@ module.exports =
     {
         context: path.resolve(__dirname, './src/client'),
         entry: {
-          app: 'app.js',
+          app: ['babel-polyfill', 'app.js'],
         },
         output: {
           path: path.resolve(__dirname, BUILD_DIR + ASSETS),
@@ -22,9 +22,16 @@ module.exports =
                 },
                 {
                     test: /\.worker\.js$/,
-                    loader: "worker-loader?inline=true"
-                }
-
+                    loader: 'worker-loader?inline=true'
+                },
+                {
+                    test: /\.js$/,
+                    exclude: [/node_modules/, /calculations/],
+                    use: [{
+                             loader: 'babel-loader',
+                             options: { presets: ['es2015', 'stage-3'] }
+                           }],
+                },
             ]
         },
         devServer: {

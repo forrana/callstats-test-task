@@ -9,7 +9,7 @@ export default class Step1 extends Step {
         let prepareDOM = () => {
             resultLink.download = 'results.csv';
             resultLink.href = window.URL.createObjectURL(file);
-            button.classList.add('button_download');
+            button.classList.add('step3_button');
             button.classList.add('pulse');
         }
 

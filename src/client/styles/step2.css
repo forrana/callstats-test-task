@@ -1,0 +1,12 @@
+.step2_button {
+  --step2-bg-color: #f4d03e;
+}
+
+.step2_button {
+    border-radius: 50%;
+    background-color: var(--step2-bg-color);
+}
+
+.step2_button:hover {
+    background-color: var(--step2-bg-color);
+}

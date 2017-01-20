@@ -9,6 +9,7 @@ export default class Step2 extends Step {
             interval,
             startTime;
 
+            console.log(data);
         let startTimer = () => {
             timer =  document.querySelector("#timer");
             startTime = Date.now();
@@ -47,7 +48,7 @@ export default class Step2 extends Step {
         }
 
         let prepareDOM = () => {
-            button.classList.add('processing');
+            button.classList.add('step2_button');
             button.innerHTML = '<span id="timer"></span>';
             loader.style.display = 'block';
         }
@@ -62,12 +63,12 @@ export default class Step2 extends Step {
                 startWorker(inputArray, resolve);
                 startTimer();
             };
-
+            console.log(data);
             fr.readAsText(data);
         }
 
         let clearDom = () => {
-            button.classList.remove('processing');
+            button.classList.remove('step2_button');
             loader.style.display = 'none';
         }
 

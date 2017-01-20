@@ -1,0 +1,13 @@
+.step1_button {
+  --step1-bg-color: #2dcc70;
+}
+
+.step1_button {
+    background-color: var(--step1-bg-color);
+}
+
+.step1_button:hover {
+    animation: pulse_animation 1s linear infinite;
+	transform-origin:50% 50%;
+    background-color: var(--step1-bg-color);
+}

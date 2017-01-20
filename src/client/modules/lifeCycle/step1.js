@@ -6,7 +6,7 @@ export default class Step1 extends Step {
             onClickFunction;
 
         let prepareDOM = () => {
-            button.classList.add('button_start');
+            button.classList.add('step1_button');
             button.innerHTML = 'Start';
         }
 
@@ -17,7 +17,7 @@ export default class Step1 extends Step {
 
         let clearDom = () => {
             button.innerHTML = '';
-            button.classList.remove('button_start');
+            button.classList.remove('step1_button');
             button.removeEventListener('click', onClickFunction);
         }
 
