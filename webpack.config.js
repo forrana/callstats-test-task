@@ -32,8 +32,9 @@ module.exports =
         },
         resolve: {
           modules: [
-              path.resolve(__dirname, './src/client'),
-              path.resolve(__dirname, './src/client/modules'),
+              path.resolve(__dirname, './src/client/'),
+              path.resolve(__dirname, './src/client/modules/lifeCycle'),
+              path.resolve(__dirname, './src/client/modules/calculations'),
                             'node_modules'
                         ],
           extensions: ['.js']
