@@ -6,14 +6,15 @@ export default class Step {
         inputParams
     ) {
         this.beforeAction = beforeFunction;
-        this.actionPromise = new Promise(actionFunction);
+        this.mainAction = actionFunction;
         this.afterAction = afterFunction;
     }
 
     fire() {
         this.beforeAction();
+        let actionPromise = new Promise(this.mainAction);
 
-        return this.actionPromise
+        return actionPromise
                 .then(
                     result => {
                         this.afterAction();

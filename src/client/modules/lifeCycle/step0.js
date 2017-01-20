@@ -5,7 +5,9 @@ export default class Step0 extends Step {
         let button = document.querySelector('.button');
 
         let prepareDOM = () => {
-
+            button.innerHTML =
+                        `Upload
+                        <input type="file" name="file" id="fileUploder">`;
         }
 
         let waitingForFile = (resolve) => {

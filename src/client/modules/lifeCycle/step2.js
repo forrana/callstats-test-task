@@ -5,15 +5,17 @@ export default class Step2 extends Step {
     constructor(data) {
         let button = document.querySelector('.button'),
             loader = document.querySelector('#loader'),
+            timer,
             interval,
             startTime;
 
         let startTimer = () => {
+            timer =  document.querySelector("#timer");
             startTime = Date.now();
 
             interval = setInterval(() => {
                let elapsedTime = Date.now() - startTime;
-               document.getElementById("timer").innerHTML = (elapsedTime / 1000).toFixed(3);
+               timer.innerHTML = (elapsedTime / 1000).toFixed(3);
            }, 100);
         }
 
@@ -24,14 +26,14 @@ export default class Step2 extends Step {
                                     size: 1000,
                                     array: data
                                 });
+            console.info('start processing', new Date().getTime());
 
             worker.onmessage = function(event) {
                 let elapsedTime = Date.now() - startTime;
 
                 console.info('end processing', new Date().getTime());
                 clearInterval(interval);
-                document.getElementById("timer").innerHTML = (elapsedTime / 1000).toFixed(3);
-
+                timer.innerHTML = (elapsedTime / 1000).toFixed(3);
                 resolve(event.data.file);
             }
         }
@@ -46,13 +48,10 @@ export default class Step2 extends Step {
             let fr = new FileReader();
 
             fr.onload = function(e) {
-                let inputArray = e.target.result.split('\n')
-                                    .map(value => +value),
-                    worker = new Worker,
+                let inputArray = e.target.result.split('\n').map(value => +value),
                     startTime;
 
                 startWorker(inputArray, resolve);
-                console.info('start processing', new Date().getTime());
                 startTimer();
             };
 
