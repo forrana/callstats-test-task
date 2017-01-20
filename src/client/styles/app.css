@@ -27,7 +27,7 @@
     margin: 0 auto;
 
     color: white;
-    background-color: #99583D;
+    background-color: #4ecdc4;
 
     text-align: center;
     text-decoration: none;
@@ -40,32 +40,35 @@
 }
 
 .button:hover {
-    background-color: #FF0000;
+    background-color: #1ca39d;
 }
 
 .button_start {
-    border-radius: 50%;
-    background-color: #FF0000;
+    background-color: #2dcc70;
 }
 
 .button_start:hover {
     animation: pulse_animation 1s linear infinite;
 	transform-origin:50% 50%;
+    background-color: #2dcc70;
 }
 
 .processing {
     border-radius: 50%;
-    background-color: #CC4A14;
+    background-color: #f4d03e;
+}
+
+.processing:hover {
+    background-color: #f4d03e;
 }
 
 .button_download {
-    border-radius: 50%;
-    background-color: #54CC14;
+    background-color: #2dcc70;
     transition: all .5s;
 }
 
 .button_download:hover {
-    background-color: #40FF40;
+    background-color: #2dcc70;
 }
 
 .button_download:before,
