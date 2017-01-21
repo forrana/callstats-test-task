@@ -5,13 +5,17 @@ class Utils{
         this.currentProgress = 0;
     }
 
+    convertMillisecondsToHHMMSS(milliseconds) {
+        return new Date(milliseconds).toISOString().substr(-10, 9);
+    }
+
     startTimer() {
         this.startTime = Date.now();
         this.timer =  document.querySelector("#timer");
 
         this.interval = setInterval(() => {
            let elapsedTime = Date.now() - this.startTime;
-           this.timer.innerHTML = (elapsedTime / 1000).toFixed(3);
+           this.timer.innerHTML = this.convertMillisecondsToHHMMSS(elapsedTime);
        }, 100);
     }
 
@@ -19,7 +23,7 @@ class Utils{
         let elapsedTime = Date.now() - this.startTime;
 
         clearInterval(this.interval);
-        this.timer.innerHTML = (elapsedTime / 1000).toFixed(3);
+        this.timer.innerHTML = this.convertMillisecondsToHHMMSS(elapsedTime);
         resolve(event.data.file);
     }
 

@@ -7,11 +7,11 @@ import Step4 from 'step4';
 export default class StateMachine{
     constructor() {
         this.steps = [
-            Step0,
-            Step1,
-            Step2,
-            Step3,
-            Step4
+            Step0, // Initial state with upload button
+            Step1, // Frame size input
+            Step2, // Just Start button
+            Step3, // Processing data step
+            Step4  // Finish step
         ];
 
         this.instantiate = async function (constructor, params) {

@@ -3,10 +3,10 @@
     margin: auto;
     padding: 5px;
     height: 15%;
-    font-size: 15pt;
     border-radius: 10px;
     border: 2px solid #2dcc70;
     text-align: center;
+    font-size: 25px;
 }
 
 #step_1_input__frame-size:focus {

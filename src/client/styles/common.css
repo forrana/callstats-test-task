@@ -1,8 +1,11 @@
 button {
     cursor: pointer;
     border: 0;
-    font-size: 32px;
     color: white;
+    font-family: Futura;
+    font-size: 40px;
+    font-style: normal;
+    font-variant: small-caps;
 }
 
 .flex-container {
@@ -12,10 +15,15 @@ button {
 }
 
 .flex-item {
-  margin: auto;
-  height: 276px;
-  width: 276px;
-  position: relative;
+    font-family: Futura;
+    font-size: 50px;
+    font-style: normal;
+    font-variant: small-caps;
+
+    margin: auto;
+    height: 276px;
+    width: 276px;
+    position: relative;
 }
 
 .button {
@@ -38,7 +46,6 @@ button {
 
     text-align: center;
     text-decoration: none;
-    font-size: 32px;
 
     border: none;
     border-radius: 12px;
