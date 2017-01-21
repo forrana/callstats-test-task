@@ -24,9 +24,9 @@ export default class {
 
     showProgress(actualProgress) {
         if(this.currentProgress < actualProgress) {
-            this.button.classList.add(`progress-${ this.currentProgress + 5 }`);
-            this.button.classList.remove(`progress-${ this.currentProgress }`);
-            this.currentProgress += 5;
+            this.button.classList.add(`progress-${ this.currentProgress*100 + 5 }`);
+            this.button.classList.remove(`progress-${ this.currentProgress*100 }`);
+            this.currentProgress += 0.05;
 
             return this.currentProgress;
         }

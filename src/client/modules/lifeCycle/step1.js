@@ -26,9 +26,9 @@ export default class Step1 extends Step {
                         placeholder="Enter size, press Enter"
                         alt="Enter size, press Enter"
                         id="frameSize"
-                        autofocus
                         step="1"
                         value=${detectFrameSize(data.size)}
+                        autofocus
                         >
             `
         }
@@ -46,12 +46,12 @@ export default class Step1 extends Step {
                 }
             }
 
-            input.addEventListener('keypress', onClickFunction);
+            window.addEventListener('keypress', onClickFunction);
         }
 
         let clearDom = () => {
             button.innerHTML = '';
-            input.removeEventListener('click', onClickFunction);
+            window.removeEventListener('click', onClickFunction);
         }
 
         super(

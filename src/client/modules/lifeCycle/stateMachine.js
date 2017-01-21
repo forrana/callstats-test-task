@@ -27,7 +27,12 @@ export default class StateMachine{
             currentResult = null;
 
         while(this.steps.length > 0) {
-            currentResult = await this.instantiate(this.steps.shift(), prevResult);
+            try {
+                currentResult = await this.instantiate(this.steps.shift(), prevResult);
+            } catch (err) {
+                console.error(err);
+                break;
+            }
             prevResult = currentResult;
         }
 

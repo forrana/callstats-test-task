@@ -7,6 +7,7 @@
     background-color: var(--step3-bg-color);
     animation: pulsar 1s linear infinite;
     transform-origin:50% 50%;
+    transition: all .5s;
 }
 
 .step3_button:hover {
@@ -29,25 +30,25 @@
 
 @-webkit-keyframes pulsar {
   0% {
-    border-width:5px;
-    border-color:rgba(0,0,0,0.2);
+    border-width:2.5px;
+    border-color:rgba(0,0,0,0.1);
     border-style:dotted;
   }
   25% {
-      border-width:10px;
-      border-style:double;
+      border-width:5px;
+      border-style:dashed;
   }
   50% {
-      border-width:15px;
-      border-style:double;
+      border-width:7.5px;
+      border-style:dotted;
   }
   75% {
-      border-width:10px;
-      border-style:double;
+      border-width:5px;
+      border-style:dashed;
   }
   100% {
-      border-width:5px;
-      border-color:rgba(0,0,0,0.2);
-      border-style:dashed;
+      border-width:2.5px;
+      border-color:rgba(0,0,0,0.1);
+      border-style:dotted;
   }
 }

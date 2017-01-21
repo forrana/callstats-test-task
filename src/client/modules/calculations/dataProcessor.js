@@ -11,9 +11,12 @@ export default class dataProcessor {
         let frame;
 
         if (frame = this.slidingWindow.nextFrame()) {
-            this.resultArray.push(
-               Median.median_2(frame.chunk)
-            )
+            let result = Median.median_2(frame.chunk);
+            if(!Number.isNaN(result)) {
+                this.resultArray.push(result)
+            } else {
+                throw 'Calculation error';
+            }
             return frame.complete;
         }
 

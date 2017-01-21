@@ -7,15 +7,22 @@ onmessage = function messageHandler(event) {
                                     event.data.size
                                 ),
             processedData = 0,
-            progress = 5;
+            progress = 0.05;
 
         while(!processedData.length) {
-            processedData = dataProcessor.process();
-            if (progress < processedData){
-                progress += 5;
+            try {
+                processedData = dataProcessor.process();
+            } catch (error) {
                 postMessage({
                   id: '',
-                  progress: progress + 9
+                  error: error
+                });
+            }
+            if (progress < processedData){
+                progress += 0.05;
+                postMessage({
+                  id: '',
+                  progress: progress + 0.09
                 });
             }
         }

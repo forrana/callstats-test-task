@@ -2,9 +2,11 @@ import Step from 'step';
 
 export default class Step0 extends Step {
     constructor() {
-        let button = document.querySelector('.button');
+        let button = document.querySelector('.button'),
+            loader = document.querySelector('#loader');
 
         let prepareDOM = () => {
+            loader.style.display = 'none';
             button.className = "button";
             button.innerHTML =
                         `Upload

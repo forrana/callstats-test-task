@@ -10,7 +10,7 @@ export default class Step3 extends Step {
             utils = new Utils(),
             currentProgress = 0;
 
-        let startWorker = (inputFile, resolve) => {
+        let startWorker = (inputFile, resolve, reject) => {
             let worker = new Worker;
 
             worker.postMessage({
@@ -19,10 +19,12 @@ export default class Step3 extends Step {
                                 });
 
             worker.onmessage = function(event) {
-                if(event.data.file) {
-                    utils.finish(event.data.file, resolve);
-                } else {
+                if(event.data.progress) {
                     currentProgress = utils.showProgress(event.data.progress);
+                } else if (event.data.error){
+                    reject(event.data.error);
+                } else {
+                    utils.finish(event.data.file, resolve);
                 }
             }
         }
@@ -34,13 +36,13 @@ export default class Step3 extends Step {
             loader.style.display = 'block';
         }
 
-        let processFile = (resolve) => {
+        let processFile = (resolve, reject) => {
             let fr = new FileReader();
 
             fr.onload = function(e) {
                 let inputArray = utils.convertStringToDataArray(e.target.result);
 
-                startWorker(inputArray, resolve);
+                startWorker(inputArray, resolve, reject);
                 utils.startTimer();
             };
             fr.readAsText(data.file);

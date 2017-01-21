@@ -35,6 +35,6 @@ function* frame(buffer, iterator) {
     while(coords = iterator.next().value)
         yield {
             chunk: array.slice(coords.start, coords.end),
-            complete: (coords.start * 100 / size)
+            complete: (coords.start / size)
         }
 }
