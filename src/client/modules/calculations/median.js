@@ -7,9 +7,8 @@ export default {
         values.sort((a, b) => a - b);
         return (values[(values.length - 1) >> 1] + values[values.length >> 1]) / 2
     },
-    median_2: array => {
-        let values = array.slice(0),
-            middle;
+    median_2: values => {
+        let middle;
 
         if (values.length <= 1) return -1;
 

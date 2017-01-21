@@ -7,7 +7,11 @@ onmessage = function messageHandler(event) {
                                     event.data.size
                                 ),
             processedData = 0,
-            progress = 0.05;
+            currentProgress = 0,
+            percents = 0;
+            
+        const STEP = 5,
+              ONE_STEP_OF_DATA = event.data.array.length * STEP / 100;
 
         while(!processedData.length) {
             try {
@@ -18,11 +22,13 @@ onmessage = function messageHandler(event) {
                   error: error
                 });
             }
-            if (progress < processedData){
-                progress += 0.05;
+
+            if (processedData - currentProgress > ONE_STEP_OF_DATA){
+                percents += STEP;
+                currentProgress += ONE_STEP_OF_DATA;
                 postMessage({
                   id: '',
-                  progress: progress + 0.09
+                  progress: percents
                 });
             }
         }

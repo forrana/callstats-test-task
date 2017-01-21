@@ -4,6 +4,7 @@
 
 .step2_button {
     background-color: var(--step2-bg-color);
+    cursor: pointer;
 }
 
 .step2_button:hover {

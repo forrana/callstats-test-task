@@ -27,6 +27,7 @@ export default class Step3 extends Step {
         }
 
         let clearDom = () => {
+            utils.clearProgress();
             button.classList = 'button';
             loader.style.display = 'none';
         }

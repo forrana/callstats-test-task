@@ -25,12 +25,18 @@ class Utils{
 
     showProgress(actualProgress) {
         if(this.currentProgress < actualProgress) {
-            this.button.classList.add(`progress-${ this.currentProgress*100 + 5 }`);
-            this.button.classList.remove(`progress-${ this.currentProgress*100 }`);
-            this.currentProgress += 0.05;
+            this.button.classList.add(`progress-${ this.currentProgress + 5 }`);
+            if (this.button.classList.contains(`progress-${ this.currentProgress }`)) {
+                this.button.classList.remove()
+            }
+            this.currentProgress += 5;
 
             return this.currentProgress;
         }
+    }
+
+    clearProgress() {
+        this.currentProgress = 0;
     }
 
     convertStringToDataArray(string) {
