@@ -24,7 +24,7 @@ class Utils{
 
         clearInterval(this.interval);
         this.timer.innerHTML = this.convertMillisecondsToHHMMSS(elapsedTime);
-        resolve(event.data.file);
+        resolve(file);
     }
 
     showProgress(actualProgress) {
@@ -63,6 +63,7 @@ class Utils{
                             });
 
         worker.onmessage = (event) => {
+
             if(event.data.progress) {
                 currentProgress = this.showProgress(event.data.progress);
             } else if (event.data.error){
