@@ -1,4 +1,4 @@
-#frameSize {
+#step_1_input__frame-size {
     width: 90%;
     margin: auto;
     padding: 5px;
@@ -9,6 +9,12 @@
     text-align: center;
 }
 
-#frameSize:focus {
+#step_1_input__frame-size:focus {
     outline-width: 0;
+}
+
+.step_1_button__proceed {
+    height: 20%;
+    background-color: #4caf50;
+    cursor: pointer;
 }

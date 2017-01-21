@@ -2,6 +2,22 @@
   --step4-bg-color: #2dcc70;
 }
 
+.step_4_timer {
+    margin: auto;
+}
+
+.step_4_button__return {
+    height: 20%;
+    background-color: #e74c3c;
+    cursor: pointer;
+}
+
+.step_4_button__download {
+    height: 20%;
+    background-color: #4caf50;
+    cursor: pointer;
+}
+
 .step4_button {
     background-color: var(--step4-bg-color);
     transition: all .5s;
@@ -11,7 +27,7 @@
     background-color: var(--step4-bg-color);
 }
 
-.step4_button:before,
+/*.step4_button:before,
 .step4_button:after {
     position: absolute;
     width: 100%;
@@ -53,4 +69,4 @@
     -ms-transform: scale(0.3);
     -o-transform: scale(0.3);
     transform: scale(0.3);
-}
+}*/

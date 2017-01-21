@@ -7,7 +7,7 @@ export default class Step0 extends Step {
 
         let prepareDOM = () => {
             loader.style.display = 'none';
-            button.className = "button";
+            button.classList.add('step_1_button--upload');
             button.innerHTML =
                         `Upload
                         <input type="file" name="file" id="fileUploder">`;
@@ -24,6 +24,7 @@ export default class Step0 extends Step {
         }
 
         let clearDom = () => {
+            button.classList.remove('step_1_button--upload');
             button.innerHTML = ``;
         }
 

@@ -1,3 +1,10 @@
+button {
+    cursor: pointer;
+    border: 0;
+    font-size: 32px;
+    color: white;
+}
+
 .flex-container {
     display: flex;
     flex-direction: row;
@@ -32,7 +39,6 @@
     text-align: center;
     text-decoration: none;
     font-size: 32px;
-    cursor: pointer;
 
     border: none;
     border-radius: 12px;
