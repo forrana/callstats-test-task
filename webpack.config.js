@@ -22,7 +22,7 @@ module.exports =
                 },
                 {
                     test: /\.worker\.js$/,
-                    loader: 'worker-loader'
+                    loader: 'worker-loader?inline=true'
                 },
                 {
                     test: /\.js$/,

@@ -1,4 +1,5 @@
 import Step from 'step';
+import utils from 'utils';
 
 export default class Step1 extends Step {
     constructor(data) {
@@ -7,19 +8,6 @@ export default class Step1 extends Step {
             input,
             frameSize;
 
-        let detectFrameSize = (size) => {
-            let expectedSize,
-                numberLength = size.toString().length;
-
-            if(numberLength > 2) {
-                expectedSize = +`10e${numberLength - 3}`;
-            } else {
-                expectedSize = 3;
-            }
-
-            return expectedSize;
-        }
-
         let prepareDOM = () => {
             button.innerHTML = `
                 <input type="number"
@@ -27,7 +15,7 @@ export default class Step1 extends Step {
                         alt="Enter size, press Enter"
                         id="frameSize"
                         step="1"
-                        value=${detectFrameSize(data.size)}
+                        value=${utils.detectFrameSize(data.size)}
                         autofocus
                         >
             `
