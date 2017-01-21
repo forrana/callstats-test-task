@@ -8,9 +8,8 @@ import styles from './styles/app.css';
 
     do {
         let stateMachine = new StateMachine();
-        
+
         result = await stateMachine.start();
-        console.log(result);
     }
     while(result);
 })()

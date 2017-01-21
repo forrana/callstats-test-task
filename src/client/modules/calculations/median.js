@@ -14,8 +14,8 @@ export default {
         if (values.length <= 1) return -1;
 
         middle = (values.length + 1) / 2,
-        sorted = math.sort(values);
-        return (sorted.length % 2) ? sorted[middle - 1] :
-                (sorted[middle - 1.5] + sorted[middle - 0.5]) / 2;
+        values = values.sort((a, b) => a - b);
+        return (values.length % 2) ? values[middle - 1] :
+                (values[middle - 1.5] + values[middle - 0.5]) / 2;
     }
 }

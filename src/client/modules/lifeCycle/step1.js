@@ -3,22 +3,55 @@ import Step from 'step';
 export default class Step1 extends Step {
     constructor(data) {
         let button = document.querySelector('.button'),
-            onClickFunction;
+            onClickFunction,
+            input,
+            frameSize;
+
+        let detectFrameSize = (size) => {
+            let expectedSize,
+                numberLength = size.toString().length;
+
+            if(numberLength > 2) {
+                expectedSize = +`10e${numberLength - 3}`;
+            } else {
+                expectedSize = 3;
+            }
+
+            return expectedSize;
+        }
 
         let prepareDOM = () => {
-            button.classList.add('step1_button');
-            button.innerHTML = 'Start';
+            button.innerHTML = `
+                <input type="number"
+                        placeholder="Enter size, press Enter"
+                        alt="Enter size, press Enter"
+                        id="frameSize"
+                        autofocus
+                        step="1"
+                        value=${detectFrameSize(data.size)}
+                        >
+            `
         }
 
         let waitingForStart = (resolve) => {
-            onClickFunction = () => resolve(data);
-            button.addEventListener('click', onClickFunction);
+            input = document.querySelector('#frameSize');
+
+            onClickFunction = (event) => {
+                let key = event.which || event.keyCode;
+                if (key === 13 && input.value) {
+                    resolve({
+                        frameSize: input.value,
+                        file: data
+                    });
+                }
+            }
+
+            input.addEventListener('keypress', onClickFunction);
         }
 
         let clearDom = () => {
             button.innerHTML = '';
-            button.classList.remove('step1_button');
-            button.removeEventListener('click', onClickFunction);
+            input.removeEventListener('click', onClickFunction);
         }
 
         super(

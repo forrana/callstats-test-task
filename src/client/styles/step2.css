@@ -1,12 +1,13 @@
 .step2_button {
-  --step2-bg-color: #f4d03e;
+  --step2-bg-color: #2dcc70;
 }
 
 .step2_button {
-    border-radius: 50%;
     background-color: var(--step2-bg-color);
 }
 
 .step2_button:hover {
+    animation: pulse_animation 1s linear infinite;
+	transform-origin:50% 50%;
     background-color: var(--step2-bg-color);
 }

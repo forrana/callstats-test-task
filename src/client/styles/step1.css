@@ -1,13 +1,14 @@
-.step1_button {
-  --step1-bg-color: #2dcc70;
+#frameSize {
+    width: 90%;
+    margin: auto;
+    padding: 5px;
+    height: 15%;
+    font-size: 15pt;
+    border-radius: 10px;
+    border: 2px solid #2dcc70;
+    text-align: center;
 }
 
-.step1_button {
-    background-color: var(--step1-bg-color);
-}
-
-.step1_button:hover {
-    animation: pulse_animation 1s linear infinite;
-	transform-origin:50% 50%;
-    background-color: var(--step1-bg-color);
+#frameSize:focus {
+    outline-width: 0;
 }

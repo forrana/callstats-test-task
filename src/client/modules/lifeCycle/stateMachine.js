@@ -2,6 +2,7 @@ import Step0 from 'step0';
 import Step1 from 'step1';
 import Step2 from 'step2';
 import Step3 from 'step3';
+import Step4 from 'step4';
 
 export default class StateMachine{
     constructor() {
@@ -9,7 +10,8 @@ export default class StateMachine{
             Step0,
             Step1,
             Step2,
-            Step3
+            Step3,
+            Step4
         ];
 
         this.instantiate = async function (constructor, params) {
@@ -21,8 +23,8 @@ export default class StateMachine{
     }
 
     async start() {
-        let prevResult = null;
-        let currentResult = null;
+        let prevResult = null,
+            currentResult = null;
 
         while(this.steps.length > 0) {
             currentResult = await this.instantiate(this.steps.shift(), prevResult);

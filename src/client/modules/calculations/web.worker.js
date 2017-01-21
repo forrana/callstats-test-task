@@ -9,13 +9,13 @@ onmessage = function messageHandler(event) {
             processedData = 0,
             progress = 5;
 
-        while(!Array.isArray(processedData)) {
+        while(!processedData.length) {
             processedData = dataProcessor.process();
             if (progress < processedData){
                 progress += 5;
                 postMessage({
                   id: '',
-                  progress: progress + 95
+                  progress: progress + 9
                 });
             }
         }

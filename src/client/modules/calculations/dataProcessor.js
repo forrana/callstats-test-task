@@ -10,11 +10,10 @@ export default class dataProcessor {
     process() {
         let frame;
 
-        if(frame = this.slidingWindow.nextFrame()) {
+        if (frame = this.slidingWindow.nextFrame()) {
             this.resultArray.push(
-               Median.median_1(frame.chunk)
+               Median.median_2(frame.chunk)
             )
-
             return frame.complete;
         }
 

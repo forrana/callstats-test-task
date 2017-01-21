@@ -1,0 +1,109 @@
+
+:root{
+  --color-progress-circle: #f4d03e;
+  --color-progress-idicator: #2dcc70;
+}
+
+.step3_button:after {
+  content: '';
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  -webkit-animation: colorload 2s;
+}
+
+.step3_button.progress-0:after {
+  background-image: linear-gradient(90deg, var(--color-progress-circle) 50%, transparent 50%, transparent), linear-gradient(90deg, var(--color-progress-idicator) 50%, var(--color-progress-circle) 50%, var(--color-progress-circle));
+}
+
+.step3_button.progress-5:after {
+  background-image: linear-gradient(90deg, var(--color-progress-circle) 50%, transparent 50%, transparent), linear-gradient(108deg, var(--color-progress-idicator) 50%, var(--color-progress-circle) 50%, var(--color-progress-circle));
+}
+
+.step3_button.progress-10:after {
+  background-image: linear-gradient(90deg, var(--color-progress-circle) 50%, transparent 50%, transparent), linear-gradient(126deg, var(--color-progress-idicator) 50%, var(--color-progress-circle) 50%, var(--color-progress-circle));
+}
+
+.step3_button.progress-15:after {
+  background-image: linear-gradient(90deg, var(--color-progress-circle) 50%, transparent 50%, transparent), linear-gradient(129.6deg, var(--color-progress-idicator) 50%, var(--color-progress-circle) 50%, var(--color-progress-circle));
+}
+
+.step3_button.progress-20:after {
+  background-image: linear-gradient(90deg, var(--color-progress-circle) 50%, transparent 50%, transparent), linear-gradient(151.2deg, var(--color-progress-idicator) 50%, var(--color-progress-circle) 50%, var(--color-progress-circle));
+}
+
+.step3_button.progress-25:after {
+  background-image: linear-gradient(90deg, var(--color-progress-circle) 50%, transparent 50%, transparent), linear-gradient(180deg, var(--color-progress-idicator) 50%, var(--color-progress-circle) 50%, var(--color-progress-circle));
+}
+
+.step3_button.progress-30:after {
+  background-image: linear-gradient(90deg, var(--color-progress-circle) 50%, transparent 50%, transparent), linear-gradient(198deg, var(--color-progress-idicator) 50%, var(--color-progress-circle) 50%, var(--color-progress-circle));
+}
+
+.step3_button.progress-35:after {
+  background-image: linear-gradient(90deg, var(--color-progress-circle) 50%, transparent 50%, transparent), linear-gradient(216deg, var(--color-progress-idicator) 50%, var(--color-progress-circle) 50%, var(--color-progress-circle));
+}
+
+.step3_button.progress-40:after {
+  background-image: linear-gradient(90deg, var(--color-progress-circle) 50%, transparent 50%, transparent), linear-gradient(234deg, var(--color-progress-idicator) 50%, var(--color-progress-circle) 50%, var(--color-progress-circle));
+}
+
+.step3_button.progress-45:after {
+  background-image: linear-gradient(90deg, var(--color-progress-circle) 50%, transparent 50%, transparent), linear-gradient(252deg, var(--color-progress-idicator) 50%, var(--color-progress-circle) 50%, var(--color-progress-circle));
+}
+
+.step3_button.progress-50:after {
+  background-image: linear-gradient(-90deg, var(--color-progress-idicator) 50%, transparent 50%, transparent), linear-gradient(270deg, var(--color-progress-idicator) 50%, var(--color-progress-circle) 50%, var(--color-progress-circle));
+}
+
+.step3_button.progress-55:after {
+  background-image: linear-gradient(-72deg, var(--color-progress-idicator) 50%, transparent 50%, transparent), linear-gradient(270deg, var(--color-progress-idicator) 50%, var(--color-progress-circle) 50%, var(--color-progress-circle));
+}
+
+.step3_button.progress-60:after {
+  background-image: linear-gradient(-54deg, var(--color-progress-idicator) 50%, transparent 50%, transparent), linear-gradient(270deg, var(--color-progress-idicator) 50%, var(--color-progress-circle) 50%, var(--color-progress-circle));
+}
+
+.step3_button.progress-65:after {
+  background-image: linear-gradient(-36deg, var(--color-progress-idicator) 50%, transparent 50%, transparent), linear-gradient(270deg, var(--color-progress-idicator) 50%, var(--color-progress-circle) 50%, var(--color-progress-circle));
+}
+
+.step3_button.progress-70:after {
+  background-image: linear-gradient(-18deg, var(--color-progress-idicator) 50%, transparent 50%, transparent), linear-gradient(270deg, var(--color-progress-idicator) 50%, var(--color-progress-circle) 50%, var(--color-progress-circle));
+}
+
+.step3_button.progress-75:after {
+  background-image: linear-gradient(0deg, var(--color-progress-idicator) 50%, transparent 50%, transparent), linear-gradient(270deg, var(--color-progress-idicator) 50%, var(--color-progress-circle) 50%, var(--color-progress-circle));
+}
+
+.step3_button.progress-80:after {
+  background-image: linear-gradient(18deg, var(--color-progress-idicator) 50%, transparent 50%, transparent), linear-gradient(270deg, var(--color-progress-idicator) 50%, var(--color-progress-circle) 50%, var(--color-progress-circle));
+}
+
+.step3_button.progress-85:after {
+  background-image: linear-gradient(36deg, var(--color-progress-idicator) 50%, transparent 50%, transparent), linear-gradient(270deg, var(--color-progress-idicator) 50%, var(--color-progress-circle) 50%, var(--color-progress-circle));
+}
+
+.step3_button.progress-90:after {
+  background-image: linear-gradient(54deg, var(--color-progress-idicator) 50%, transparent 50%, transparent), linear-gradient(270deg, var(--color-progress-idicator) 50%, var(--color-progress-circle) 50%, var(--color-progress-circle));
+}
+
+.step3_button.progress-95:after {
+  background-image: linear-gradient(72deg, var(--color-progress-idicator) 50%, transparent 50%, transparent), linear-gradient(270deg, var(--color-progress-idicator) 50%, var(--color-progress-circle) 50%, var(--color-progress-circle));
+}
+
+.step3_button.progress-100:after {
+  background-image: linear-gradient(90deg, var(--color-progress-idicator) 50%, transparent 50%, transparent), linear-gradient(270deg, var(--color-progress-idicator) 50%, var(--color-progress-circle) 50%, var(--color-progress-circle));
+}
+
+@-webkit-keyframes colorload {
+  0% {
+    opacity: 0;
+    transform: rotate(0deg)
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(360deg)
+  }
+}
