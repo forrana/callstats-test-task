@@ -1,10 +1,19 @@
-import Step0 from 'step0';
-import Step1 from 'step1';
-import Step2 from 'step2';
-import Step3 from 'step3';
-import Step4 from 'step4';
+import Step0 from 'step.initial';
+import Step1 from 'step.frame-size';
+import Step2 from 'step.start-processing';
+import Step3 from 'step.processing';
+import Step4 from 'step.finish';
 
+/**
+ * Represents the heart of our app. Manage steps, handle errors.
+ * @class StateMachine
+ */
 export default class StateMachine{
+
+    /**
+     * constructor - Create a state machine.
+     * @constructor
+     */
     constructor() {
         this.steps = [
             Step0, // Initial state with upload button
@@ -14,7 +23,7 @@ export default class StateMachine{
             Step4  // Finish step
         ];
 
-        this.instantiate = async function (constructor, params) {
+        this.fireStep = async function (constructor, params) {
                                    let instance = new constructor(params),
                                        result = await instance.fire();
 
@@ -22,13 +31,19 @@ export default class StateMachine{
                                 }
     }
 
+    /**
+     * start - Start life cycle.
+     *
+     * @return {boolean}  true - if everything was fine,
+     *                    false - if there was something wrong
+     */
     async start() {
         let prevResult = null,
             currentResult = null;
 
         while(this.steps.length > 0) {
             try {
-                currentResult = await this.instantiate(this.steps.shift(), prevResult);
+                currentResult = await this.fireStep(this.steps.shift(), prevResult);
             } catch (err) {
                 console.error(err);
                 break;

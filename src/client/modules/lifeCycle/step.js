@@ -1,4 +1,17 @@
+/**
+ * Representing a life cycle's step interface.
+ * @class Step
+ */
+
 export default class Step {
+    /**
+     * Create a life cycle's step with .
+     * @constructor
+     * @param {function} beforeFunction   The function, which fire before action.
+     * @param {function} actionFunction   The main async function.
+     * @param {function} afterFunction    The function, which fire after action.
+     * @param {object} inputParams  The object, which containt additional params.
+     */
     constructor(
         beforeFunction = () => true,
         actionFunction = () => true,
@@ -10,6 +23,10 @@ export default class Step {
         this.afterAction = afterFunction;
     }
 
+    /**
+     * fire - execute the life cycle's step
+     *
+     */
     fire() {
         this.beforeAction();
         let actionPromise = new Promise(this.mainAction);
@@ -23,10 +40,16 @@ export default class Step {
                 )
                 .catch(
                     error => this.error(error)
-                )
+                );
     }
 
+    /**
+     * error - the Error handling function
+     *
+     * @param  {type} error description
+     * @throws <description>
+     */
     error(error) {
-        throw `error: ${error}`
+        throw `error: ${error}`;
     }
 }

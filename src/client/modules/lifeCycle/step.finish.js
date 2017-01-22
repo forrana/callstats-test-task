@@ -1,9 +1,24 @@
 import Step from 'step';
 
-export default class Step4 extends Step {
+/**
+ * Representing the start processing step. Initialize DOM, waiting for pressing start.
+ * @class StepFinish
+ * @extends Step
+ */
+export default class StepFinish extends Step {
+    /**
+     * constructor - create finish processing step
+     * @constructor
+     * @param {file} file The result csv file from previous step.
+     */
     constructor(file) {
         let button = document.querySelector('.button');
 
+        /**
+         * prepareDOM - Add step-class and pulse class on main button,
+         *  Add 'download' and 'upload another' buttons to DOM
+         *
+         */
         let prepareDOM = () => {
             let timer = document.querySelector('#timer');
 
@@ -30,24 +45,34 @@ export default class Step4 extends Step {
                 </a>
             `
             );
-        }
+        };
 
+        /**
+         * finalize - Add listeners on  button, waiting for pressing
+         * @param {function} resolve finish step, pass data to next step.
+         */
         let finalize = (resolve) => {
             let onClickFunction = () => {
                 setTimeout(
                     () => resolve(true),
                     100
-                )
-            }
+                );
+            };
+
             document.querySelector('.step_4_button__return')
                     .addEventListener('click', onClickFunction);
-        }
+        };
 
+        /**
+         * clearDom - Remove step-class from main button,
+         *  Remove Start text from DOM
+         *  Remove listeners
+         */
         let clearDom = () => {
             button.classList.remove('step4_button');
             button.classList.remove('pulse');
             button.innerHTML = '';
-        }
+        };
 
         super(
             prepareDOM,
