@@ -32,7 +32,7 @@ export default class dataProcessor {
             if (!Number.isNaN(result)) {
                 this.resultArray.push(result)
             } else {
-                throw 'Calculation error';
+                throw new Error('Calculation error');
             }
             return frame.complete;
         }
