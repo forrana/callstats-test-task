@@ -20,9 +20,10 @@ export default class StepInitial extends Step {
          *
          */
         let prepareDOM = () => {
-            button.classList.add('step_1_button--upload');
+            document.querySelector('#loader').style.display = 'none';
+            button.classList = 'button step_1_button--upload';
             button.innerHTML =
-                        `Upload
+                        `UPLOAD
                         <input type="file" name="file" id="fileUploder">`;
         };
 

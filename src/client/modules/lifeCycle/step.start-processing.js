@@ -23,8 +23,8 @@ export default class StepStartProcessing extends Step {
          */
         let prepareDOM = () => {
             button.classList.add('step2_button');
-            button.innerHTML = 'Start';
-        }
+            button.innerHTML = 'START';
+        };
 
         /**
          * waitingForStart - Add listener on window and button, waiting for pressing

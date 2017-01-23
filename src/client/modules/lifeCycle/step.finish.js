@@ -30,7 +30,7 @@ export default class StepFinish extends Step {
             button.insertAdjacentHTML('afterbegin',
             `
                 <button type="button" role="button" class="step_4_button__return">
-                    Upload another
+                    RESTART
                 </button>
             `
             );
@@ -41,7 +41,7 @@ export default class StepFinish extends Step {
                     href=${window.URL.createObjectURL(file)}
                     download="results.csv"
                 >
-                    Download
+                    DOWNLOAD
                 </a>
             `
             );
