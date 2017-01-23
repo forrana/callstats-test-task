@@ -108,13 +108,9 @@ class Utils {
      * @param  {Function} reject    reject Promise function
      */
     startWorker(inputDataArray, frameSize, resolve, reject) {
-        let worker = new Worker(),
-            uint32Array = new Uint32Array(inputDataArray);
+        let worker = new Worker();
 
-        worker.postMessage({
-            size: frameSize,
-            array: uint32Array
-        }, [uint32Array.buffer]);
+        worker.postMessage([frameSize, inputDataArray]);
 
         worker.onmessage = (event) => {
             if (event.data.progress) {

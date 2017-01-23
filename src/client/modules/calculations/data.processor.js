@@ -1,4 +1,4 @@
-import Median from './median';
+import median2 from './median';
 import SlidingWindow from './sliding.window';
 
 /**
@@ -27,8 +27,9 @@ export default class dataProcessor {
         let frame;
 
         if (frame = this.slidingWindow.nextFrame()) {
-            let result = Median.median_2(frame.chunk);
-            if(!Number.isNaN(result)) {
+            let result = median2(frame.chunk);
+
+            if (!Number.isNaN(result)) {
                 this.resultArray.push(result)
             } else {
                 throw 'Calculation error';
