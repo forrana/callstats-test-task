@@ -1,4 +1,4 @@
-import DataProcessor from 'data.processor';
+import DataProcessor from './data.processor';
 
 const ARRAY_POSITION = 1,
     FRAME_SIZE_POSITION = 0;

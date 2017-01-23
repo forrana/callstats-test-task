@@ -53,7 +53,7 @@
         "object-curly-spacing": [2, "always"],
         "space-in-parens": [2, "never"],
         "arrow-spacing": 2,
-        "comma-dangle": ["error", "only-multiline"]
+        "comma-dangle": 1
     },
   "env": {
     "browser": true,
