@@ -3,6 +3,12 @@ var path = require('path');
 module.exports = function(config) {
     config.set({
         browsers: ['Chrome'],
+        customLaunchers: {
+          Chrome_travis_ci: {
+            base: 'Chrome',
+            flags: ['--no-sandbox']
+          }
+        },
         plugins : ['karma-jasmine', 'karma-chrome-launcher', 'karma-webpack'],
         coverageReporter: {
             reporters: [
