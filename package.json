@@ -40,12 +40,10 @@
     "karma-webpack": "^1.7.0",
     "loader-utils": "^0.2.12",
     "phantomjs-prebuilt": "^2.1.14",
+    "phantomjs": "^2.1.7",
     "rimraf": "^2.5.0",
     "style-loader": "^0.13.1",
     "webpack": "^1.12.11",
     "worker-loader": "^0.7.1"
-  },
-  "dependencies": {
-    "phantomjs": "^2.1.7"
   }
 }
