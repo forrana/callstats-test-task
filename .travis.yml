@@ -1,12 +1,6 @@
 language: node_js
 node_js:
     - "6.9.4"
-before_script:
-# Installing firefox browser
-   - sudo apt-get install xvfb firefox unzip -yqq
-   - Xvfb :99 -ac &
-   - export DISPLAY=:99
-   - firefox -v
 script: node_modules/karma/bin/karma start karma.config.js --single-run
 before_install:
   - export CHROME_BIN=chromium-browser
