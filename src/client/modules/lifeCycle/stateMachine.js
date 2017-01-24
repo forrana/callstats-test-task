@@ -9,11 +9,6 @@ import Step4 from 'step.finish';
  * @class StateMachine
  */
 export default class StateMachine{
-
-    /**
-     * constructor - Create a state machine.
-     * @constructor
-     */
     constructor() {
         this.steps = [
             Step0, // Initial state with upload button

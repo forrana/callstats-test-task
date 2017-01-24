@@ -1,17 +1,13 @@
 /**
  * Representing a life cycle's step interface.
+ * @param {function} beforeFunction   The function, which fire before action.
+ * @param {function} actionFunction   The main async function.
+ * @param {function} afterFunction    The function, which fire after action.
+ * @param {object} inputParams  The object, which containt additional params.
  * @class Step
  */
 
 export default class Step {
-    /**
-     * Create a life cycle's step with .
-     * @constructor
-     * @param {function} beforeFunction   The function, which fire before action.
-     * @param {function} actionFunction   The main async function.
-     * @param {function} afterFunction    The function, which fire after action.
-     * @param {object} inputParams  The object, which containt additional params.
-     */
     constructor(
         beforeFunction = () => true,
         actionFunction = () => true,

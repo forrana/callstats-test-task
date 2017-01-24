@@ -2,15 +2,11 @@ import Step from 'step';
 
 /**
  * Representing the start processing step. Initialize DOM, waiting for pressing start.
+ * @param {file} file The result csv file from previous step.
  * @class StepFinish
  * @extends Step
  */
 export default class StepFinish extends Step {
-    /**
-     * constructor - create finish processing step
-     * @constructor
-     * @param {file} file The result csv file from previous step.
-     */
     constructor(file) {
         let button = document.querySelector('.button');
 

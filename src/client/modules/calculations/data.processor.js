@@ -3,16 +3,11 @@ import SlidingWindow from './sliding.window';
 
 /**
  * Representing a data processing class.
+ * @param  {number[]} buffer    A Array or a piece of Array with processing data.
+ * @param  {number} frameSize A size of sliding window's frame
  * @class dataProcessor
  */
 export default class dataProcessor {
-    /**
-     * constructor - create a data processor with defined parameters.
-     *
-     * @constructor
-     * @param  {number[]} buffer    A Array or a piece of Array with processing data.
-     * @param  {number} frameSize A size of sliding window's frame
-     */
     constructor(buffer, frameSize) {
         this.slidingWindow = new SlidingWindow(buffer, frameSize);
         this.resultArray = [];

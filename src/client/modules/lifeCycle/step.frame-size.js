@@ -8,11 +8,6 @@ import utils from 'utils';
  * @extends Step
  */
 export default class StepInputFrameSize extends Step {
-
-    /**
-     * constructor - create start processing step
-     * @constructor
-     */
     constructor(data) {
         let button = document.querySelector('.button'),
             onKeyEnterClickFunction;

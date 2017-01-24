@@ -6,11 +6,6 @@ import Step from 'step';
  * @extends Step
  */
 export default class StepStartProcessing extends Step {
-
-    /**
-     * constructor - create start processing step
-     * @constructor
-     */
     constructor(data) {
         let button = document.querySelector('.button'),
             onClickFunction,

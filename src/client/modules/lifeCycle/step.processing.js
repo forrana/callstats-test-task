@@ -7,13 +7,7 @@ import utils from 'utils';
  * @extends Step
  */
 export default class StepProcessing extends Step {
-
-    /**
-     * constructor - create processing step
-     * @constructor
-     */
     constructor(data) {
-
         let button = document.querySelector('.button'),
             loader = document.querySelector('#loader');
 

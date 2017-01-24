@@ -44,17 +44,12 @@ function* frame(buffer, coordsIterator) {
 
 /**
  * Representing the sliding window concept container.
+ * @param  {number[]} buffer    The Array or a piece of Array with processing data.
+ * @param  {number} frameSize   The size of sliding window's frame
  * @class SlidingWindow
  */
 
 export default class SlidingWindow {
-    /**
-     * constructor - create a sliding window container with defined parameters.
-     *
-     * @constructor
-     * @param  {number[]} buffer    The Array or a piece of Array with processing data.
-     * @param  {number} frameSize   The size of sliding window's frame
-     */
     constructor(buffer, frameSize) {
         this.frame = frame(
                         buffer,

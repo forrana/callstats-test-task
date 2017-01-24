@@ -6,11 +6,6 @@ import Step from 'step';
  * @extends Step
  */
 export default class StepInitial extends Step {
-
-    /**
-     * constructor - create initial step of our application
-     * @constructor
-     */
     constructor() {
         let button = document.querySelector('.button');
 
