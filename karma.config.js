@@ -9,13 +9,21 @@ module.exports = function(config) {
             flags: ['--no-sandbox']
           }
         },
-        plugins : ['karma-jasmine', 'karma-chrome-launcher', 'karma-webpack'],
+        plugins : [
+            'karma-jasmine',
+            'karma-chrome-launcher',
+            'karma-webpack',
+            'karma-coverage',
+            'karma-coveralls',
+            'karma-sourcemap-loader'
+        ],
         coverageReporter: {
             reporters: [
                 {
                     type: 'html',
                     subdir: 'html'
-                }, {
+                },
+                {
                     type: 'lcovonly',
                     subdir: '.'
                 }
@@ -29,7 +37,7 @@ module.exports = function(config) {
             'tests.webpack.js': ['webpack', 'sourcemap']
         },
         reporters: [
-            'progress', 'coverage'
+            'progress', 'coverage', 'coveralls'
         ],
         webpack: {
             cache: true,
