@@ -2,16 +2,10 @@ var path = require('path');
 
 module.exports = function(config) {
     var cfg = {
-        browsers: ['Chrome'],
-        customLaunchers: {
-          Chrome_travis_ci: {
-            base: 'Chrome',
-            flags: ['--no-sandbox']
-          }
-        },
+        browsers: ['PhantomJS'],
         plugins : [
             'karma-jasmine',
-            'karma-chrome-launcher',
+            'karma-phantomjs-launcher',
             'karma-webpack',
             'karma-coverage',
             'karma-coveralls',
@@ -48,25 +42,16 @@ module.exports = function(config) {
                     {
                         enforce: 'pre',
                         test: /.spec\.js$/,
-                        include: /calculations/,
+                        include: /__spec__/,
                         exclude: /(bower_components|node_modules)/,
                         loader: 'babel-loader',
-                        query: {
-                            cacheDirectory: true
-                        }
-                    }, {
-                        enforce: 'pre',
-                        test: /\.js?$/,
-                        include: path.resolve(__dirname, '../calculations/'),
-                        exclude: /(node_modules|bower_components|__spec__)/,
-                        loader: 'babel-istanbul',
                         query: {
                             cacheDirectory: true
                         }
                     },
                     {
                         test: /\.js$/,
-                        include: path.resolve(__dirname, '../calculations'),
+                        include: /calculations/,
                         exclude: /(bower_components|node_modules|__spec__)/,
                         loader: 'babel-loader',
                         query: {
@@ -77,8 +62,5 @@ module.exports = function(config) {
             }
         }
     };
-    if (process.env.TRAVIS) {
-        cfg.browsers = ['Chrome_travis_ci'];
-    }
     config.set(cfg);
 };
