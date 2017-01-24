@@ -2,7 +2,7 @@ var path = require('path');
 
 module.exports = function(config) {
     var cfg = {
-        browsers: ['Chrome'],
+        browsers: ['Firefox'],
         customLaunchers: {
           Chrome_travis_ci: {
             base: 'Chrome',
@@ -11,7 +11,7 @@ module.exports = function(config) {
         },
         plugins : [
             'karma-jasmine',
-            'karma-chrome-launcher',
+            'karma-firefox-launcher',
             'karma-webpack',
             'karma-coverage',
             'karma-coveralls',
@@ -77,8 +77,8 @@ module.exports = function(config) {
             }
         }
     };
-    if (process.env.TRAVIS) {
-        cfg.browsers = ['Chrome_travis_ci'];
-    }
+    // if (process.env.TRAVIS) {
+    //     cfg.browsers = ['Chrome_travis_ci'];
+    // }
     config.set(cfg);
 };
