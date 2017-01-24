@@ -42,32 +42,33 @@ module.exports = function(config) {
         webpack: {
             cache: true,
             devtool: 'inline-source-map',
+            entry: ['tests.webpack.js'],
             module: {
-                preLoaders: [
+                rules: [
                     {
+                        enforce: 'pre',
                         test: /.spec\.js$/,
                         include: /calculations/,
                         exclude: /(bower_components|node_modules)/,
-                        loader: 'babel',
+                        loader: 'babel-loader',
                         query: {
                             cacheDirectory: true
                         }
                     }, {
+                        enforce: 'pre',
                         test: /\.js?$/,
-                        include: /calculations/,
+                        include: path.resolve(__dirname, '../calculations/'),
                         exclude: /(node_modules|bower_components|__spec__)/,
                         loader: 'babel-istanbul',
                         query: {
                             cacheDirectory: true
                         }
-                    }
-                ],
-                loaders: [
+                    },
                     {
                         test: /\.js$/,
                         include: path.resolve(__dirname, '../calculations'),
                         exclude: /(bower_components|node_modules|__spec__)/,
-                        loader: 'babel',
+                        loader: 'babel-loader',
                         query: {
                             cacheDirectory: true
                         }
