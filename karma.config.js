@@ -1,7 +1,7 @@
 var path = require('path');
 
 module.exports = function(config) {
-    config.set({
+    var cfg = {
         browsers: ['Chrome'],
         customLaunchers: {
           Chrome_travis_ci: {
@@ -67,8 +67,9 @@ module.exports = function(config) {
                 ]
             }
         }
-    });
+    };
     if (process.env.TRAVIS) {
         cfg.browsers = ['Chrome_travis_ci'];
     }
+    config.set(cfg);
 };
