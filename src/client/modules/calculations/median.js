@@ -1,4 +1,4 @@
-import customSort from './sort';
+import sort from './sort';
 
 let median = array => {
     let middle;
@@ -8,7 +8,7 @@ let median = array => {
     }
 
     middle = (array.length + 1) / 2;
-    array = customSort(array);
+    array = sort.defaultSort(array);
 
     return (array.length % 2)
         ? array[middle - 1]

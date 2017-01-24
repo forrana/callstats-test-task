@@ -3,12 +3,6 @@ var path = require('path');
 module.exports = function(config) {
     var cfg = {
         browsers: ['Firefox'],
-        customLaunchers: {
-          Chrome_travis_ci: {
-            base: 'Chrome',
-            flags: ['--no-sandbox']
-          }
-        },
         plugins : [
             'karma-jasmine',
             'karma-firefox-launcher',
@@ -16,6 +10,54 @@ module.exports = function(config) {
             'karma-coverage',
             'karma-coveralls',
             'karma-sourcemap-loader'
+        ],
+        files: [
+            'node_modules/babel-polyfill/dist/polyfill.js', 'tests.webpack.js'
+        ],
+        frameworks: ['jasmine'],
+        preprocessors: {
+            'tests.webpack.js': ['webpack', 'sourcemap']
+        },
+        webpack: {
+            cache: true,
+            devtool: 'inline-source-map',
+            entry: ['babel-polyfill'],
+            module: {
+                rules: [
+                    {
+                        enforce: 'pre',
+                        test: /.spec\.js$/,
+                        include: /__spec__/,
+                        exclude: /(bower_components|node_modules)/,
+                        loader: 'babel-loader',
+                        query: {
+                            cacheDirectory: true
+                        }
+                    },
+                    {
+                        enforce: 'pre',
+                        test: /\.js$/,
+                        include: /calculations/,
+                        exclude: /(bower_components|node_modules|__spec__)/,
+                        loader: 'babel-istanbul-loader',
+                        query: {
+                            cacheDirectory: true
+                        }
+                    },
+                    {
+                        test: /\.js$/,
+                        include: /calculations/,
+                        exclude: /(bower_components|node_modules|__spec__)/,
+                        loader: 'babel-loader',
+                        query: {
+                            cacheDirectory: true
+                        }
+                    }
+                ]
+            }
+        },
+        reporters: [
+            'progress', 'coverage', 'coveralls'
         ],
         coverageReporter: {
             reporters: [
@@ -28,57 +70,7 @@ module.exports = function(config) {
                     subdir: '.'
                 }
             ]
-        },
-        files: [
-            'node_modules/babel-polyfill/dist/polyfill.js', 'tests.webpack.js'
-        ],
-        frameworks: ['jasmine'],
-        preprocessors: {
-            'tests.webpack.js': ['webpack', 'sourcemap']
-        },
-        reporters: [
-            'progress', 'coverage', 'coveralls'
-        ],
-        webpack: {
-            cache: true,
-            devtool: 'inline-source-map',
-            entry: ['tests.webpack.js'],
-            module: {
-                rules: [
-                    {
-                        enforce: 'pre',
-                        test: /.spec\.js$/,
-                        include: /calculations/,
-                        exclude: /(bower_components|node_modules)/,
-                        loader: 'babel-loader',
-                        query: {
-                            cacheDirectory: true
-                        }
-                    }, {
-                        enforce: 'pre',
-                        test: /\.js?$/,
-                        include: path.resolve(__dirname, '../calculations/'),
-                        exclude: /(node_modules|bower_components|__spec__)/,
-                        loader: 'babel-istanbul',
-                        query: {
-                            cacheDirectory: true
-                        }
-                    },
-                    {
-                        test: /\.js$/,
-                        include: path.resolve(__dirname, '../calculations'),
-                        exclude: /(bower_components|node_modules|__spec__)/,
-                        loader: 'babel-loader',
-                        query: {
-                            cacheDirectory: true
-                        }
-                    }
-                ]
-            }
         }
     };
-    // if (process.env.TRAVIS) {
-    //     cfg.browsers = ['Chrome_travis_ci'];
-    // }
     config.set(cfg);
 };
