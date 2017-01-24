@@ -3,7 +3,7 @@ var path = require('path');
 module.exports = function(config) {
     config.set({
         browsers: ['Chrome'],
-        plugins : ['karma-jasmine', 'karma-phantomjs-launcher', 'karma-webpack'],
+        plugins : ['karma-jasmine', 'karma-chrome-launcher', 'karma-webpack'],
         coverageReporter: {
             reporters: [
                 {
