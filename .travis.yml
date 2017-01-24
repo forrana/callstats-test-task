@@ -3,7 +3,7 @@ node_js:
     - "6.9.4"
 before_script:
 # Installing firefox browser
-   - apt-get install xvfb iceweasel unzip -yqq
+   - sudo apt-get install xvfb iceweasel unzip -yqq
    - Xvfb :99 -ac &
    - export DISPLAY=:99
    - firefox -v
