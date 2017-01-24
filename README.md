@@ -6,8 +6,11 @@
 Install:<br/>
     <i> $ yarn </i>
 
-Run tests:<br/>
+Run Unit tests:<br/>
     <i> $ yarn test </i>
+
+Run E2E tests:<br/>
+    <i> $ yarn test_e2e </i>
 
 Start project:<br/>
     <i> $ webpack-dev-server</i>
