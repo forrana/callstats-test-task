@@ -15,3 +15,7 @@ Build project:<br/>
 Tested in browsers:<br/>
     
 Chrome 53+, Firefox 50+, Chrome for Android
+
+Working example you can find here: http://forrana.tk
+Test coverage: http://forrana.tk/coverage/html/
+Docs: http://forrana.tk/docs/
