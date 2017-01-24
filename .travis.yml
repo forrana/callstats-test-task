@@ -1,6 +1,7 @@
 language: node_js
 node_js:
     - "6.9.4"
+sudo: false
 script: node_modules/karma/bin/karma start karma.config.js --single-run
 before_install:
   - export CHROME_BIN=chromium-browser
