@@ -3,7 +3,7 @@ node_js:
     - "6.9.4"
 before_script:
 # Installing firefox browser
-   - sudo apt-get sudo apt-get install firefox
+   - apt-get install xvfb firefox unzip -yqq
    - Xvfb :99 -ac &
    - export DISPLAY=:99
    - firefox -v
