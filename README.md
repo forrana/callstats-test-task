@@ -6,14 +6,17 @@
 Install:<br/>
     <i> $ yarn </i>
 
+Run tests:<br/>
+    <i> $ yarn test </i>
+
 Start project:<br/>
     <i> $ webpack-dev-server</i>
-  
+
 Build project:<br/>
     <i> $ webpack</i>
-  
+
 Tested in browsers:<br/>
-    
+
 Chrome 53+, Firefox 50+, Chrome for Android
 
 Working example you can find here: http://forrana.tk <br/>
