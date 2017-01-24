@@ -2,10 +2,10 @@ var path = require('path');
 
 module.exports = function(config) {
     var cfg = {
-        browsers: ['PhantomJS'],
+        browsers: ['Firefox'],
         plugins : [
             'karma-jasmine',
-            'karma-phantomjs-launcher',
+            'karma-firefox-launcher',
             'karma-webpack',
             'karma-coverage',
             'karma-coveralls',
