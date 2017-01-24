@@ -11,18 +11,6 @@ module.exports = function(config) {
             'karma-coveralls',
             'karma-sourcemap-loader'
         ],
-        coverageReporter: {
-            reporters: [
-                {
-                    type: 'html',
-                    subdir: 'html'
-                },
-                {
-                    type: 'lcovonly',
-                    subdir: '.'
-                }
-            ]
-        },
         files: [
             'node_modules/babel-polyfill/dist/polyfill.js', 'tests.webpack.js'
         ],
@@ -30,9 +18,6 @@ module.exports = function(config) {
         preprocessors: {
             'tests.webpack.js': ['webpack', 'sourcemap']
         },
-        reporters: [
-            'progress', 'coverage', 'coveralls'
-        ],
         webpack: {
             cache: true,
             devtool: 'inline-source-map',
@@ -50,6 +35,16 @@ module.exports = function(config) {
                         }
                     },
                     {
+                        enforce: 'pre',
+                        test: /\.js$/,
+                        include: /calculations/,
+                        exclude: /(bower_components|node_modules|__spec__)/,
+                        loader: 'babel-istanbul-loader',
+                        query: {
+                            cacheDirectory: true
+                        }
+                    },
+                    {
                         test: /\.js$/,
                         include: /calculations/,
                         exclude: /(bower_components|node_modules|__spec__)/,
@@ -60,6 +55,21 @@ module.exports = function(config) {
                     }
                 ]
             }
+        },
+        reporters: [
+            'progress', 'coverage', 'coveralls'
+        ],
+        coverageReporter: {
+            reporters: [
+                {
+                    type: 'html',
+                    subdir: 'html'
+                },
+                {
+                    type: 'lcovonly',
+                    subdir: '.'
+                }
+            ]
         }
     };
     config.set(cfg);
