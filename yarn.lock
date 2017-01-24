@@ -2987,10 +2987,6 @@ karma-es6-shim@^1.0.0:
     es5-shim "~4.5.8"
     es6-shim "~0.35.0"
 
-karma-jasmine-web-worker@^0.1.2:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/karma-jasmine-web-worker/-/karma-jasmine-web-worker-0.1.2.tgz#ffdcc59436f5de9a033d7fbf21d200c6b3a1288d"
-
 karma-jasmine@^0.3.6:
   version "0.3.8"
   resolved "https://registry.yarnpkg.com/karma-jasmine/-/karma-jasmine-0.3.8.tgz#5b6457791ad9b89aa173f079e3ebe1b8c805236c"
@@ -3001,10 +2997,6 @@ karma-phantomjs-launcher@^1.0.2:
   dependencies:
     lodash "^4.0.1"
     phantomjs-prebuilt "^2.1.7"
-
-karma-requirejs@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/karma-requirejs/-/karma-requirejs-1.1.0.tgz#fddae2cb87d7ebc16fb0222893564d7fee578798"
 
 karma-sourcemap-loader@^0.3.7:
   version "0.3.7"
@@ -3807,7 +3799,7 @@ pend@~1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/pend/-/pend-1.2.0.tgz#7a57eb550a6783f9115331fcf4663d5c8e007a50"
 
-phantomjs-prebuilt@^2.1.7:
+phantomjs-prebuilt@^2.1.14, phantomjs-prebuilt@^2.1.7:
   version "2.1.14"
   resolved "https://registry.yarnpkg.com/phantomjs-prebuilt/-/phantomjs-prebuilt-2.1.14.tgz#d53d311fcfb7d1d08ddb24014558f1188c516da0"
   dependencies:
@@ -4206,7 +4198,7 @@ read-pkg@^1.0.0:
     normalize-package-data "^2.3.2"
     path-type "^1.0.0"
 
-"readable-stream@^2.0.0 || ^1.1.13", readable-stream@^2.1.0, readable-stream@~2.1.4:
+"readable-stream@^2.0.0 || ^1.1.13", readable-stream@^2.0.5, readable-stream@^2.1.0, readable-stream@~2.1.4:
   version "2.1.5"
   resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.1.5.tgz#66fa8b720e1438b364681f2ad1a63c618448c9d0"
   dependencies:
@@ -4218,7 +4210,7 @@ read-pkg@^1.0.0:
     string_decoder "~0.10.x"
     util-deprecate "~1.0.1"
 
-readable-stream@^2.0.1, readable-stream@^2.0.2, readable-stream@^2.0.5, readable-stream@~2.0.0, readable-stream@~2.0.5:
+readable-stream@^2.0.1, readable-stream@^2.0.2, readable-stream@~2.0.0, readable-stream@~2.0.5:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.0.6.tgz#8f90341e68a53ccc928788dacfcd11b36eb9b78e"
   dependencies:
