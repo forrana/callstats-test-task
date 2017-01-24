@@ -3,8 +3,11 @@
 
 <b>Simple ES6/ES7/CSS3/babel/webpack2.2/karma/jasmine application.</b>
 
+Install:<br/>
+  <i> $ yarn </i>
+
 Start project:<br/>
-  <i>$webpack-dev-server</i>
+  <i> $ webpack-dev-server</i>
   
 Build project:<br/>
-  <i>$webpack</i>
+  <i> $ webpack</i>
