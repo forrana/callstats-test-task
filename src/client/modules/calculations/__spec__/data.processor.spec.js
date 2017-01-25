@@ -32,6 +32,14 @@ describe('Calculations.General', function () {
                 expect(processedData).toEqual(expectedArray);
             });
         });
+
+        describe('getMedian()', function () {
+            it('Should return expected array', function () {
+                let processedData = dataProcessor.getMedian();
+
+                expect(processedData).toEqual(expectedArray);
+            });
+        });
     });
 
     describe('Data processor, negative', function () {
@@ -58,6 +66,14 @@ describe('Calculations.General', function () {
                     while (!processedData.length) {
                         processedData = dataProcessor.process();
                     }
+                }).toThrow(new Error("Calculation error"));
+            });
+        });
+
+        describe('getMedian()', function () {
+            it('First call should throw calculation error', function () {
+                expect(function() {
+                    let processedData = dataProcessor.getMedian();
                 }).toThrow(new Error("Calculation error"));
             });
         });

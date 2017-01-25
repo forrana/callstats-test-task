@@ -34,4 +34,25 @@ export default class dataProcessor {
 
         return this.resultArray;
     }
+
+    /**
+     * getMedian - return calculated median array
+     *
+     * @return {number[]}  processed data array
+     */
+    getMedian() {
+        let frame;
+
+        while (frame = this.slidingWindow.nextFrame()) {
+            let result = median2(frame.chunk);
+
+            if (!Number.isNaN(result)) {
+                this.resultArray.push(result)
+            } else {
+                throw new Error('Calculation error');
+            }
+        }
+
+        return this.resultArray;
+    }
 }
