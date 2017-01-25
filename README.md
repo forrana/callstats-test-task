@@ -4,6 +4,10 @@
 
 <b>Simple ES6/ES7/CSS3/babel/webpack2.2/karma/jasmine application.</b>
 
+Global dependencies:<br/>
+    [webpack-dev-server](https://github.com/webpack/webpack-dev-server) - var. 2^ <br/>
+    [yarn](https://yarnpkg.com/en/docs/install)
+
 Install:<br/>
     <i> $ yarn </i>
 
