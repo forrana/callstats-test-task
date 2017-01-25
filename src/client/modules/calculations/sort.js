@@ -45,7 +45,7 @@ let merge = (left, right) => {
   *
   * @param {Array} array The array to sort
   */
-let mergeSort = (arr) => {
+let mergeSortFunction = (arr) => {
 
     if (arr.length < 2) {
         return arr;
@@ -57,7 +57,7 @@ let mergeSort = (arr) => {
     return merge(mergeSort(left), mergeSort(right));
 };
 
-let heapSort = (function () {
+var heapSortFunction = (function () {
     function heapify(array, index, heapSize) {
         var left = 2 * index + 1,
             right = 2 * index + 2,
@@ -99,7 +99,7 @@ let heapSort = (function () {
     };
 }());
 
-var mergeSort1 = (function () {
+let mergeSort1Function = (function () {
     function merger(array, start, end) {
         if (Math.abs(end - start) <= 1) {
             return [];
@@ -152,10 +152,10 @@ var mergeSort1 = (function () {
 
 }());
 
-let defaultSort = array => array.sort((a,b) => a - b);
-// mergeSort1
-// heapSort
-// mergeSort
+export const defaultSort = array => array.sort((a,b) => a - b);
+export const mergeSort1 = mergeSort1Function;
+export const heapSort = heapSortFunction;
+export const mergeSort = mergeSortFunction;
 
 export default {
     defaultSort,

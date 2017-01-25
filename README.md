@@ -15,7 +15,7 @@ Run Unit tests:<br/>
     <i> $ yarn test </i>
 
 Run E2E tests:<br/>
-    <i> $ yarn test_e2e </i>
+    <i> $ yarn test_e2e </i> (You must have app working on localhost:8080 for that)
 
 Start project:<br/>
     <i> $ webpack-dev-server</i>

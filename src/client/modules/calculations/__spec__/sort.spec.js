@@ -1,21 +1,11 @@
-import sort from '../sort.js';
+import {mergeSort, heapSort, mergeSort1} from '../sort.js';
 
 
 describe('Calculations.General', function () {
 
     describe('Sort methods', function () {
         var testArray = [1, 9, 4, 5, 3, 2],
-            expectedArray = [1, 2, 3, 4, 5, 9],
-            mergeSort,
-            mergeSort1,
-            heapSort;
-
-        beforeEach(function () {
-            mergeSort = sort.mergeSort;
-            mergeSort1 = sort.mergeSort1;
-            heapSort = sort.heapSort;
-        });
-
+            expectedArray = [1, 2, 3, 4, 5, 9];
 
         describe('mergeSort', function () {
             it('Should sort array in ascend order', function () {
